@@ -1,0 +1,3 @@
+"""
+Logic for fetching news.
+"""

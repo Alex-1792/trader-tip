@@ -1,0 +1,53 @@
+[project]
+name = "trader-tip"
+version = "0.1.0"
+description = "A lightweight FastAPI integration with an LLM to improve python code"
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "fastapi (>=0.115.12,<0.116.0)",
+    "pydantic (>=2.11.5,<3.0.0)"
+]
+
+[tool.poetry]
+requires-poetry = ">=2.0"
+packages = [ { include = "trader_tip", from = "src" }]
+include = [ "src/trader_tip" ]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.13"
+mypy = "^1.16.0"
+coverage = "^7.9.0"
+covdefaults = "^2.3.0"
+pytest = "^8.4.0"
+
+[tool.coverage.run]
+plugins = [ "covdefaults" ]
+
+[tool.coverage.report]
+fail_under = 90
+exclude_lines = [ "def __repr__" ]
+
+[tool.mypy]
+files = [ "**/*.py" ]
+python_version = "3.13"
+plugins = ["pydantic.mypy"]
+
+[tool.ruff]
+src = [ "**/*.py" ]
+target-version = "py313"
+line-length = 120
+
+[tool.pydoclint]
+style = "google"
+allow-init-docstring = true
+
+[tool.codespell]
+skip = "poetry.lock"

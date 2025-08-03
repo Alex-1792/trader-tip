@@ -1,0 +1,12 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+
+# VSCode generated files #
+######################
+.vscode/*
+
+# Cache generated files #
+######################
+**__pycache__**
