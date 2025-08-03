@@ -1,5 +1,5 @@
 """
-A lightweight FastAPI integration with an LLM to improve python code.
+An app to assist trading decisions based on news events.
 """
 
 from __future__ import annotations
